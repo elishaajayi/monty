@@ -13,9 +13,9 @@ void push(stack_t **stack, char *token, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		exit(EXIT_FAILURE);
-	if (atoi(token) == 0 && *token != '0')
+	if (token == NULL || (atoi(token) == 0 && *token != '0'))
 	{
-		fprintf(stderr, "L<%d>: usage: push integer", line_number);
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
