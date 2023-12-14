@@ -53,3 +53,26 @@ void pall(stack_t **stack, char *token, unsigned int line_number)
 		current = current->next;
 	}
 }
+
+/**
+ * pint - prints all elements in the stack
+ * @stack: pointer to the stack
+ * @token: the token to work with
+ * @line_number: line number of the opcode
+ */
+void pint(stack_t **stack, char *token, unsigned int line_number)
+{
+	stack_t *current;
+
+	(void) token;
+	(void) line_number;
+	current = *stack;
+
+	if (current == NULL)
+	{
+		fprintf(stderr, "L<%d>: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", current->n);
+}
+

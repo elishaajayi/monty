@@ -27,7 +27,12 @@ int main(int argc, char *argv[])
 		parser(line, tokens);
 		command = get_func(tokens[0]);
 		if (command != NULL)
-			command(&stack, tokens[1], num);
+		{
+			if (tokens[1] == NULL)
+				command(&stack, NULL, num);
+			else
+				command(&stack, tokens[1], num);
+		}
 		else
 			fprintf(stderr, "Fucked");
 		memset(tokens, 0, sizeof(tokens));

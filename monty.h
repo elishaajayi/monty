@@ -46,6 +46,7 @@ typedef struct instruction_s
 void parser(const char *line, char *tokens[]);
 void push(stack_t **stack, char *token, unsigned int line_number);
 void pall(stack_t **stack, char *token, unsigned int line_number);
+void pint(stack_t **stack, char *token, unsigned int line_number);
 
 /* Utility Functions */
 FILE *file_checker(char *filename);
