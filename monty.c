@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 		}
 		else
 			fprintf(stderr, "Fucked");
+		num++;
 		memset(tokens, 0, sizeof(tokens));
 	}
 
