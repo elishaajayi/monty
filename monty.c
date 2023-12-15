@@ -10,12 +10,12 @@ int main(int argc, char *argv[])
 {
 	FILE *file;
 	stack_t *stack;
-	char *tokens[MAX_LINE_LEN], line[MAX_LINE_LEN];
-	int i = 0, num = 1;
+	char *tokens[MAX_TOKENS], line[MAX_LINE_LEN];
+	int i, num = 1;
 
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -34,14 +34,17 @@ int main(int argc, char *argv[])
 				command(&stack, tokens[1], num);
 		}
 		else
-			fprintf(stderr, "Fucked");
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", num, tokens[0]);
+			exit(EXIT_FAILURE);
+		}
 		num++;
+		for (i = 0; tokens[i] != NULL; i++)
+			free(tokens[i]);
 		memset(tokens, 0, sizeof(tokens));
 	}
 
-	for (i = 0; tokens[i] != NULL; i++)
-		free(tokens[i]);
-
+	cleanup(stack, tokens);
 	fclose(file);
 	return (0);
 }

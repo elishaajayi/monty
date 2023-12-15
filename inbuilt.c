@@ -18,6 +18,6 @@ char *_strdup(const char *str)
 		exit(EXIT_FAILURE);
 	}
 
-	strcpy(dup_str, str);
+	strncpy(dup_str, str, len);
 	return (dup_str);
 }

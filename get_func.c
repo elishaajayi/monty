@@ -10,7 +10,8 @@ void (*get_func(char *opcode))(stack_t **stack, char *token, unsigned int lnum)
 	int i = 0;
 
 	instruction_t instructions[] = {
-		{"push", push}, {"pall", pall}, {"pint", pint}, {NULL, NULL}
+		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
+		{NULL, NULL}
 	};
 
 	while (instructions[i].opcode != NULL)

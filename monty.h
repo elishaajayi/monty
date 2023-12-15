@@ -47,9 +47,11 @@ void parser(const char *line, char *tokens[]);
 void push(stack_t **stack, char *token, unsigned int line_number);
 void pall(stack_t **stack, char *token, unsigned int line_number);
 void pint(stack_t **stack, char *token, unsigned int line_number);
+void pop(stack_t **stack, char *token, unsigned int line_number);
 
 /* Utility Functions */
 FILE *file_checker(char *filename);
 void (*get_func(char *opcode))(stack_t **stack, char *token, unsigned int lnum);
+void cleanup(stack_t *stack, char *tokens[]);
 
 #endif
