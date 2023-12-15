@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAX_LINE_LEN 1024
 #define MAX_TOKENS 64
@@ -53,5 +54,6 @@ void pop(stack_t **stack, char *token, unsigned int line_number);
 FILE *file_checker(char *filename);
 void (*get_func(char *opcode))(stack_t **stack, char *token, unsigned int lnum);
 void cleanup(stack_t *stack, char *tokens[]);
+bool _atoi(const char *str, int *result);
 
 #endif

@@ -21,3 +21,33 @@ char *_strdup(const char *str)
 	strncpy(dup_str, str, len);
 	return (dup_str);
 }
+
+/**
+ * _atoi - just like inbuilt
+ * @str: to convert
+ * @result: the result as stated
+ * Return: the result
+ */
+bool _atoi(const char *str, int *result)
+{
+	int res = 0;
+	int sign = 1;
+
+	if (*str == '-')
+	{
+		sign = -1;
+		++str;
+	}
+
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - '0');
+		++str;
+	}
+
+	if (*str != '\0' && *str != '\n')
+		return (false);
+
+	*result = res * sign;
+	return (true);
+}

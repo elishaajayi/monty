@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	stack_t *stack;
+	stack_t *stack = NULL;
 	char *tokens[MAX_TOKENS], line[MAX_LINE_LEN];
 	int i, num = 1;
 

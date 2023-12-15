@@ -9,17 +9,10 @@
 void push(stack_t **stack, char *token, unsigned int line_number)
 {
 	stack_t *new_node;
-	char *endptr;
-	long result;
+	char *value = token;
+	int result;
 
-	if (token == NULL)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	result = strtol(token, &endptr, 10);
-	if (*endptr != '\0' && *endptr != '\n')
+	if (value == NULL || !_atoi(value, &result))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -32,15 +25,15 @@ void push(stack_t **stack, char *token, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->n = (int)result;
+	new_node->n = atoi(value);
 	new_node->prev = NULL;
 
 	if (*stack == NULL)
 		new_node->next = NULL;
 	else
 	{
-		new_node->next = *stack;
 		(*stack)->prev = new_node;
+		new_node->next = *stack;
 	}
 
 	*stack = new_node;
