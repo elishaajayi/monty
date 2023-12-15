@@ -11,7 +11,8 @@ void (*get_func(char *opcode))(stack_t **stack, char *token, unsigned int lnum)
 
 	instruction_t instructions[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
-		{"swap", swap}, {"add", add}, {"nop", nop}, {NULL, NULL}
+		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
+		{"div", div_op}, {"mul", mul_op}, {"mod", mod_op}, {NULL, NULL}
 	};
 
 	if (opcode == NULL)
