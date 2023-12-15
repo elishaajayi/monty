@@ -13,7 +13,7 @@ void (*get_func(char *opcode))(stack_t **stack, char *token, unsigned int lnum)
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
 		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
 		{"div", div_op}, {"mul", mul_op}, {"mod", mod_op}, {"pchar", pchar_op},
-		{"pstr", pstr_op}, {"rotl", rotl_op}, {NULL, NULL}
+		{"pstr", pstr_op}, {"rotl", rotl_op}, {"rotr", rotr_op}, {NULL, NULL}
 	};
 
 	if (opcode == NULL)
