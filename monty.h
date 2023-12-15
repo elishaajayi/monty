@@ -53,6 +53,7 @@ void swap(stack_t **stack, char *token, unsigned int line_number);
 void add(stack_t **stack, char *token, unsigned int line_number);
 void nop(stack_t **stack, char *token, unsigned int line_number);
 void sub(stack_t **stack, char *token, unsigned int line_number);
+void com(stack_t **stack, char *token, unsigned int line_number);
 void div_op(stack_t **stack, char *token, unsigned int line_number);
 void mul_op(stack_t **stack, char *token, unsigned int line_number);
 void mod_op(stack_t **stack, char *token, unsigned int line_number);

@@ -29,3 +29,15 @@ void rotr_op(stack_t **stack, char *token, unsigned int line_number)
 	}
 }
 
+/**
+ * com - rotates the stack to the bottom
+ * @stack: pointer to the stack
+ * @token: unused parameter for this opcode
+ * @line_number: unused parameter for this opcode
+ */
+void com(stack_t **stack, char *token, unsigned int line_number)
+{
+	(void)*stack;
+	(void)token;
+	(void)line_number;
+}
