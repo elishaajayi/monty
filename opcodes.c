@@ -109,3 +109,33 @@ void pop(stack_t **stack, char *token, unsigned int line_number)
 	*stack = new_head;
 }
 
+/**
+ * swap - prints all elements in the stack
+ * @stack: pointer to the stack
+ * @token: the token to work with
+ * @line_number: line number of the opcode
+ */
+void swap(stack_t **stack, char *token, unsigned int line_number)
+{
+	stack_t *temp;
+
+	(void)token;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*stack)->next;
+	(*stack)->next = temp->next;
+	temp->prev = (*stack)->prev;
+
+	if (temp->next != NULL)
+		temp->next->prev = *stack;
+
+	(*stack)->prev = temp;
+	temp->next = *stack;
+	*stack = temp;
+}
+
