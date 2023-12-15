@@ -25,3 +25,17 @@ void add(stack_t **stack, char *token, unsigned int line_number)
 
 	free(temp);
 }
+
+/**
+ * nop - adds the top two elements of the stack
+ * @stack: pointer to the stack
+ * @token: unused parameter for this opcode
+ * @line_number: line number of the opcode
+ */
+void nop(stack_t **stack, char *token, unsigned int line_number)
+{
+	(void)*stack;
+	(void)token;
+	(void)line_number;
+}
+
